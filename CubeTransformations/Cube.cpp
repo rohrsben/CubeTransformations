@@ -1,18 +1,68 @@
 #include "Cube.h"
 
+/*
+tiles are referenced by their index in /tiles/
+TODO: check into cleaning up how transforms are done?
+	maybe modelling the smaller cubes as connected is easier/more efficient?
+*/
 Cube::Cube() {
 	tiles = { W, W, W, W, W, W, W, W, W, G, G, G, G, G, G, G, G, G, O, O, O, O, O, O, O, O, O, B, B, B, B, B, B, B, B, B, R, R, R, R, R, R, R, R, R, Y, Y, Y, Y, Y, Y, Y, Y, Y };
 	tmpFace = { W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W };
 	tmpMiddle = { W, W, W, W, W, W, W, W, W };
 }
 
+/* 
+transformations are done as such:
+	1. all tiles which are going to change/rotate are stored in to tmpFace
+	2. on transform by transform basis, the tiles are replaced in /tiles/ with their corresponding tmp value
+*/
 void Cube::front() {
-	tmpFace = { tiles[0], tiles[1], tiles[2], tiles[3], tiles[4], tiles[5], tiles[6], tiles[7], tiles[8], tiles[15], tiles[16], tiles[17], tiles[24], tiles[25], tiles[26], tiles[33], tiles[34], tiles[35], tiles[42], tiles[43], tiles[44] };
+	tmpFace = { 
+		// f1 - f9
+		tiles[0], tiles[1], tiles[2], tiles[3], tiles[4], tiles[5], tiles[6], tiles[7], tiles[8],
+		// t7 - t9
+		tiles[15], tiles[16], tiles[17],
+		// r7 - r9
+		tiles[24], tiles[25], tiles[26],
+		// b7 - b9
+		tiles[33], tiles[34], tiles[35],
+		// l7 - l9
+		tiles[42], tiles[43], tiles[44] };
 
-	tiles[2] = B;
+	// f1 - f9
+	tiles[0] = tmpFace[6];
+	tiles[1] = tmpFace[3];
+	tiles[2] = tmpFace[0];
+	tiles[3] = tmpFace[7];
+	tiles[4] = tmpFace[4];
+	tiles[5] = tmpFace[1];
+	tiles[6] = tmpFace[8];
+	tiles[7] = tmpFace[5];
+	tiles[8] = tmpFace[2];
+
+	// t7 - t9
+	tiles[15] = tmpFace[18];
+	tiles[16] = tmpFace[19];
+	tiles[17] = tmpFace[20];
+
+	// r7 - r9
+	tiles[24] = tmpFace[9];
+	tiles[25] = tmpFace[10];
+	tiles[26] = tmpFace[11];
+
+	// b7 - b9
+	tiles[33] = tmpFace[12];
+	tiles[34] = tmpFace[13];
+	tiles[35] = tmpFace[14];
+
+	// l7 - l9
+	tiles[42] = tmpFace[15];
+	tiles[43] = tmpFace[16];
+	tiles[44] = tmpFace[17];
 }
 
 void Cube::print() {
+	// TODO: print actual color codes instead of enum color value
 	std::string spacer = "       ";
 	std::string fancyLine = "------------------------";
 

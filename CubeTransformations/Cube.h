@@ -6,6 +6,7 @@
 
 class Cube {
 private:
+	// namely: white, green, orange, blue, red, yellow
 	enum COLORS { W, G, O, B, R, Y };
 
 	std::vector<COLORS> tiles;
