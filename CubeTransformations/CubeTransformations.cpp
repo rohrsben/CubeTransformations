@@ -5,7 +5,16 @@
 int main()
 {
     Cube test;
-    test.print();
-    test.front();
-    test.print();
+    int finished = -1;
+    while (finished < 0) {
+        test.topRegular();
+        test.topRegular();
+        test.topRegular();
+        test.topRegular();
+        test.topRegular();
+        
+        finished = test.solvedChecker();
+    }
+
+    std::cout << "Finished in " << finished << " rotations." << std::endl;
 }
