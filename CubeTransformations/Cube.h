@@ -1,10 +1,20 @@
 #pragma once
+
+#include <vector>
+#include <iostream>
+#include <string>
+
 class Cube {
 private:
-	int tiles[54];
-	int temp[21];
+	enum COLORS { W, G, O, B, R, Y };
+
+	std::vector<COLORS> tiles;
+	std::vector<COLORS> tmpFace;
+	std::vector<COLORS> tmpMiddle;
+
 
 public:
 	Cube();
 	void front();
+	void print();
 };

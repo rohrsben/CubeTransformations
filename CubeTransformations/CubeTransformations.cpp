@@ -2,15 +2,15 @@
 //
 
 #include <iostream>
+#include <string>
 #include "Cube.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    Cube things;
-    std::cout << things.stuff[2];
-    things.change2(5);
-    std::cout << things.stuff[2];
+    Cube test;
+    test.print();
+    test.front();
+    test.print();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
