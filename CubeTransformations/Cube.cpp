@@ -23,78 +23,345 @@ transformations are done as such:
 	these are all created using helper functions, see cubeHelper.py
 */
 void Cube::frontRegular() {
-	tmpFace = { 
-		// f1 - f9
-		tiles[0], tiles[1], tiles[2], tiles[3], tiles[4], tiles[5], tiles[6], tiles[7], tiles[8],
-		// t7 - t9
-		tiles[15], tiles[16], tiles[17],
-		// r7 - r9
-		tiles[24], tiles[25], tiles[26],
-		// b7 - b9
-		tiles[33], tiles[34], tiles[35],
-		// l7 - l9
-		tiles[42], tiles[43], tiles[44] };
+	tmpFace = {
+		tiles[33],
+		tiles[34],
+		tiles[35],
+		tiles[0],
+		tiles[1],
+		tiles[2],
+		tiles[3],
+		tiles[4],
+		tiles[5],
+		tiles[6],
+		tiles[7],
+		tiles[8],
+		tiles[42],
+		tiles[43],
+		tiles[44],
+		tiles[24],
+		tiles[25],
+		tiles[26],
+		tiles[15],
+		tiles[16],
+		tiles[17]
+	};
 
-	// f1 - f9
-	tiles[0] = tmpFace[6];
-	tiles[1] = tmpFace[3];
-	tiles[2] = tmpFace[0];
-	tiles[3] = tmpFace[7];
-	tiles[4] = tmpFace[4];
-	tiles[5] = tmpFace[1];
-	tiles[6] = tmpFace[8];
-	tiles[7] = tmpFace[5];
-	tiles[8] = tmpFace[2];
-
-	// t7 - t9
-	tiles[15] = tmpFace[18];
-	tiles[16] = tmpFace[19];
-	tiles[17] = tmpFace[20];
-
-	// r7 - r9
-	tiles[24] = tmpFace[9];
-	tiles[25] = tmpFace[10];
-	tiles[26] = tmpFace[11];
-
-	// b7 - b9
-	tiles[33] = tmpFace[12];
-	tiles[34] = tmpFace[13];
-	tiles[35] = tmpFace[14];
-
-	// l7 - l9
-	tiles[42] = tmpFace[15];
-	tiles[43] = tmpFace[16];
-	tiles[44] = tmpFace[17];
+	tiles[33] = tmpFace[15];
+	tiles[34] = tmpFace[16];
+	tiles[35] = tmpFace[17];
+	tiles[0] = tmpFace[9];
+	tiles[1] = tmpFace[6];
+	tiles[2] = tmpFace[3];
+	tiles[3] = tmpFace[10];
+	tiles[4] = tmpFace[7];
+	tiles[5] = tmpFace[4];
+	tiles[6] = tmpFace[11];
+	tiles[7] = tmpFace[8];
+	tiles[8] = tmpFace[5];
+	tiles[42] = tmpFace[0];
+	tiles[43] = tmpFace[1];
+	tiles[44] = tmpFace[2];
+	tiles[24] = tmpFace[18];
+	tiles[25] = tmpFace[19];
+	tiles[26] = tmpFace[20];
+	tiles[15] = tmpFace[12];
+	tiles[16] = tmpFace[13];
+	tiles[17] = tmpFace[14];
 
 	rotations += 1;
 }
 
 void Cube::topRegular() {
-	tmpFace = { tiles[9], tiles[10], tiles[11], tiles[12], tiles[13], tiles[14], tiles[15], tiles[16], tiles[17], tiles[47], tiles[46], tiles[45], tiles[18], tiles[21], tiles[24], tiles[2], tiles[1], tiles[0], tiles[44], tiles[41], tiles[38] };
+	tmpFace = {
+		tiles[0],
+		tiles[1],
+		tiles[2],
+		tiles[38],
+		tiles[41],
+		tiles[44],
+		tiles[18],
+		tiles[21],
+		tiles[24],
+		tiles[9],
+		tiles[10],
+		tiles[11],
+		tiles[12],
+		tiles[13],
+		tiles[14],
+		tiles[15],
+		tiles[16],
+		tiles[17],
+		tiles[45],
+		tiles[46],
+		tiles[47]
+	};
 
-	tiles[9] = tmpFace[6];
-	tiles[10] = tmpFace[3];
-	tiles[11] = tmpFace[0];
-	tiles[12] = tmpFace[7];
-	tiles[13] = tmpFace[4];
-	tiles[14] = tmpFace[1];
-	tiles[15] = tmpFace[8];
-	tiles[16] = tmpFace[5];
-	tiles[17] = tmpFace[2];
-	tiles[47] = tmpFace[18];
-	tiles[46] = tmpFace[19];
-	tiles[45] = tmpFace[20];
-	tiles[18] = tmpFace[9];
-	tiles[21] = tmpFace[10];
-	tiles[24] = tmpFace[11];
-	tiles[2] = tmpFace[12];
-	tiles[1] = tmpFace[13];
-	tiles[0] = tmpFace[14];
-	tiles[44] = tmpFace[15];
-	tiles[41] = tmpFace[16];
-	tiles[38] = tmpFace[17];
+	tiles[0] = tmpFace[8];
+	tiles[1] = tmpFace[7];
+	tiles[2] = tmpFace[6];
+	tiles[38] = tmpFace[0];
+	tiles[41] = tmpFace[1];
+	tiles[44] = tmpFace[2];
+	tiles[18] = tmpFace[20];
+	tiles[21] = tmpFace[19];
+	tiles[24] = tmpFace[18];
+	tiles[9] = tmpFace[15];
+	tiles[10] = tmpFace[12];
+	tiles[11] = tmpFace[9];
+	tiles[12] = tmpFace[16];
+	tiles[13] = tmpFace[13];
+	tiles[14] = tmpFace[10];
+	tiles[15] = tmpFace[17];
+	tiles[16] = tmpFace[14];
+	tiles[17] = tmpFace[11];
+	tiles[45] = tmpFace[3];
+	tiles[46] = tmpFace[4];
+	tiles[47] = tmpFace[5];
 
 	rotations += 1;
+}
+
+void Cube::rightRegular() {
+	tmpFace = {
+		tiles[27],
+		tiles[30],
+		tiles[33],
+		tiles[2],
+		tiles[5],
+		tiles[8],
+		tiles[18],
+		tiles[19],
+		tiles[20],
+		tiles[21],
+		tiles[22],
+		tiles[23],
+		tiles[24],
+		tiles[25],
+		tiles[26],
+		tiles[11],
+		tiles[14],
+		tiles[17],
+		tiles[45],
+		tiles[48],
+		tiles[51]
+	};
+
+	tiles[27] = tmpFace[18];
+	tiles[30] = tmpFace[19];
+	tiles[33] = tmpFace[20];
+	tiles[2] = tmpFace[2];
+	tiles[5] = tmpFace[1];
+	tiles[8] = tmpFace[0];
+	tiles[18] = tmpFace[12];
+	tiles[19] = tmpFace[9];
+	tiles[20] = tmpFace[6];
+	tiles[21] = tmpFace[13];
+	tiles[22] = tmpFace[10];
+	tiles[23] = tmpFace[7];
+	tiles[24] = tmpFace[14];
+	tiles[25] = tmpFace[11];
+	tiles[26] = tmpFace[8];
+	tiles[11] = tmpFace[3];
+	tiles[14] = tmpFace[4];
+	tiles[17] = tmpFace[5];
+	tiles[45] = tmpFace[17];
+	tiles[48] = tmpFace[16];
+	tiles[51] = tmpFace[15];
+
+	rotations += 1;
+}
+
+void Cube::leftRegular() {
+	tmpFace = {
+		tiles[29],
+		tiles[32],
+		tiles[35],
+		tiles[0],
+		tiles[3],
+		tiles[6],
+		tiles[36],
+		tiles[37],
+		tiles[38],
+		tiles[39],
+		tiles[40],
+		tiles[41],
+		tiles[42],
+		tiles[43],
+		tiles[44],
+		tiles[9],
+		tiles[12],
+		tiles[15],
+		tiles[47],
+		tiles[50],
+		tiles[53]
+	};
+
+	tiles[29] = tmpFace[5];
+	tiles[32] = tmpFace[4];
+	tiles[35] = tmpFace[3];
+	tiles[0] = tmpFace[15];
+	tiles[3] = tmpFace[16];
+	tiles[6] = tmpFace[17];
+	tiles[36] = tmpFace[12];
+	tiles[37] = tmpFace[9];
+	tiles[38] = tmpFace[6];
+	tiles[39] = tmpFace[13];
+	tiles[40] = tmpFace[10];
+	tiles[41] = tmpFace[7];
+	tiles[42] = tmpFace[14];
+	tiles[43] = tmpFace[11];
+	tiles[44] = tmpFace[8];
+	tiles[9] = tmpFace[20];
+	tiles[12] = tmpFace[19];
+	tiles[15] = tmpFace[18];
+	tiles[47] = tmpFace[0];
+	tiles[50] = tmpFace[1];
+	tiles[53] = tmpFace[2];
+
+	rotations += 1;
+}
+
+void Cube::bottomRegular() {
+	tmpFace = {
+		tiles[27],
+		tiles[28],
+		tiles[29],
+		tiles[30],
+		tiles[31],
+		tiles[32],
+		tiles[33],
+		tiles[34],
+		tiles[35],
+		tiles[6],
+		tiles[7],
+		tiles[8],
+		tiles[36],
+		tiles[39],
+		tiles[42],
+		tiles[20],
+		tiles[23],
+		tiles[26],
+		tiles[51],
+		tiles[52],
+		tiles[53]
+	};
+
+	tiles[27] = tmpFace[6];
+	tiles[28] = tmpFace[3];
+	tiles[29] = tmpFace[0];
+	tiles[30] = tmpFace[7];
+	tiles[31] = tmpFace[4];
+	tiles[32] = tmpFace[1];
+	tiles[33] = tmpFace[8];
+	tiles[34] = tmpFace[5];
+	tiles[35] = tmpFace[2];
+	tiles[6] = tmpFace[12];
+	tiles[7] = tmpFace[13];
+	tiles[8] = tmpFace[14];
+	tiles[36] = tmpFace[18];
+	tiles[39] = tmpFace[19];
+	tiles[42] = tmpFace[20];
+	tiles[20] = tmpFace[11];
+	tiles[23] = tmpFace[10];
+	tiles[26] = tmpFace[9];
+	tiles[51] = tmpFace[17];
+	tiles[52] = tmpFace[16];
+	tiles[53] = tmpFace[15];
+
+	rotations += 1;
+}
+
+void Cube::backRegular() {
+	tmpFace = {
+		tiles[27],
+		tiles[28],
+		tiles[29],
+		tiles[36],
+		tiles[37],
+		tiles[38],
+		tiles[18],
+		tiles[19],
+		tiles[20],
+		tiles[9],
+		tiles[10],
+		tiles[11],
+		tiles[45],
+		tiles[46],
+		tiles[47],
+		tiles[48],
+		tiles[49],
+		tiles[50],
+		tiles[51],
+		tiles[52],
+		tiles[53]
+	};
+
+	tiles[27] = tmpFace[3];
+	tiles[28] = tmpFace[4];
+	tiles[29] = tmpFace[5];
+	tiles[36] = tmpFace[9];
+	tiles[37] = tmpFace[10];
+	tiles[38] = tmpFace[11];
+	tiles[18] = tmpFace[0];
+	tiles[19] = tmpFace[1];
+	tiles[20] = tmpFace[2];
+	tiles[9] = tmpFace[6];
+	tiles[10] = tmpFace[7];
+	tiles[11] = tmpFace[8];
+	tiles[45] = tmpFace[18];
+	tiles[46] = tmpFace[15];
+	tiles[47] = tmpFace[12];
+	tiles[48] = tmpFace[19];
+	tiles[49] = tmpFace[16];
+	tiles[50] = tmpFace[13];
+	tiles[51] = tmpFace[20];
+	tiles[52] = tmpFace[17];
+	tiles[53] = tmpFace[14];
+
+	rotations += 1;
+}
+
+void Cube::frontPrime() {
+	frontRegular();
+	frontRegular();
+	frontRegular();
+	rotations -= 2;
+}
+
+void Cube::topPrime() {
+	topRegular();
+	topRegular();
+	topRegular();
+	rotations -= 2;
+}
+
+void Cube::rightPrime() {
+	rightRegular();
+	rightRegular();
+	rightRegular();
+	rotations -= 2;
+}
+
+void Cube::leftPrime() {
+	leftRegular();
+	leftRegular();
+	leftRegular();
+	rotations -= 2;
+}
+
+void Cube::bottomPrime() {
+	bottomRegular();
+	bottomRegular();
+	bottomRegular();
+	rotations -= 2;
+}
+
+void Cube::backPrime() {
+	backRegular();
+	backRegular();
+	backRegular();
+	rotations -= 2;
 }
 
 // misc
@@ -152,12 +419,20 @@ void Cube::print() {
 }
 
 std::string Cube::colorCoder(COLORS color) {
-	if (color == W) return "W";
-	if (color == G) return "G";
-	if (color == O) return "O";
-	if (color == B) return "B";
-	if (color == R) return "R";
-	if (color == Y) return "Y";
+	switch (color) {
+		case W:
+			return "W";
+		case G:
+			return "G";
+		case O:
+			return "O";
+		case B:
+			return "B";
+		case R:
+			return "R";
+		case Y:
+			return "Y";
+	}
 }
 
 int Cube::solvedChecker() {

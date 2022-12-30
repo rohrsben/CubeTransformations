@@ -1,20 +1,21 @@
 #include <iostream>
-#include <string>
 #include "Cube.h"
 
+// TODO: user input for transformation pattern
 int main()
 {
-    Cube test;
-    int finished = -1;
-    while (finished < 0) {
-        test.topRegular();
-        test.topRegular();
-        test.topRegular();
-        test.topRegular();
-        test.topRegular();
-        
-        finished = test.solvedChecker();
+    Cube cube;
+
+    int rotations = -1;
+    while (rotations < 0) {
+        cube.frontRegular();
+        cube.rightRegular();
+        cube.frontPrime();
+        cube.rightPrime();
+
+        rotations = cube.solvedChecker();
     }
 
-    std::cout << "Finished in " << finished << " rotations." << std::endl;
+    std::cout << "Finished in " << rotations << " rotations." << std::endl;
 }
+

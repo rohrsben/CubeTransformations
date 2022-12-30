@@ -24,6 +24,17 @@ public:
 	// transforms
 	void frontRegular();
 	void topRegular();
+	void rightRegular();
+	void leftRegular();
+	void bottomRegular();
+	void backRegular();
+
+	void frontPrime();
+	void topPrime();
+	void rightPrime();
+	void leftPrime();
+	void bottomPrime();
+	void backPrime();
 
 	// misc
 	void print();
